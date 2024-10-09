@@ -1,0 +1,97 @@
+body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 2em;
+    color: #3d3d3d;
+    --mdc-theme-primary: #007f8b;
+    --mdc-theme-on-primary: #f1f3f4;
+}
+
+h1 {
+    font-style: italic;
+    color: #007f8b;
+}
+
+h2 {
+    clear: both;
+}
+
+.videoView {
+    position: relative; /* ทำให้ videoView เป็น container */
+    width: 100%; /* ทำให้ videoView เต็มขนาด */
+    height: auto; /* ความสูงอัตโนมัติ */
+}
+
+video {
+    clear: both;
+    display: block;
+    position: absolute; /* ซ้อนกันกับ canvas */
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+    width: 25%; /* ทำให้วิดีโอเต็มความกว้างของ container */
+    height: auto; /* ความสูงอัตโนมัติ */
+}
+
+.output_canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+    width: 25%; /* ทำให้ canvas เต็มความกว้างของ container */
+    height: auto; /* ความสูงอัตโนมัติ */
+    pointer-events: none; /* เพื่อให้ไม่บังการคลิกที่ video */
+    z-index: 1; /* วางไว้บนสุด */
+}
+
+.blend-shapes {
+    position: absolute; /* เพื่อให้มันอยู่ที่ด้านขวา */
+    top: 50px; /* ขยับขึ้นไปที่ด้านบน */
+    right: 0; /* ขอบขวาของ container */
+    width: 48%; /* ขนาดที่ต้องการ */
+    margin: 2% 1%; /* กำหนด margin */
+}
+
+.blend-shapes-item {
+    display: flex;
+    align-items: center;
+    height: 20px;
+}
+
+.blend-shapes-label {
+    display: flex;
+    width: 120px;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 4px;
+}
+
+.blend-shapes-value {
+    display: flex;
+    height: 16px;
+    align-items: center;
+    background-color: #007f8b;
+}/* สไตล์ของ Navbar */
+.navbar {
+    background-color: black; /* พื้นหลังสีดำ */
+    position: fixed; /* ทำให้ navbar อยู่บนสุดตลอด */
+    top: 0; /* ติดขอบด้านบน */
+    left: 0; /* เริ่มจากด้านซ้ายสุด */
+    width: 100%; /* ความกว้างเต็มจอ */
+    z-index: 1000; /* จัดลำดับชั้นการแสดงผล */
+    padding: 10px 20px; /* ระยะห่างภายใน Navbar */
+    box-sizing: border-box; /* เพื่อไม่ให้ padding ทำให้กว้างเกิน 100% */
+  }
+  
+  /* ปรับสไตล์ข้อความใน Navbar */
+  .navbar .navbar-brand, 
+  .navbar .nav-link, 
+  .navbar .dropdown-toggle, 
+  .navbar .btn {
+    color: white; /* ตัวหนังสือสีขาว */
+  }
+  
+  .navbar .nav-link:hover, 
+  .navbar .dropdown-toggle:hover, 
+  .navbar .btn:hover {
+    color: #d3d3d3; /* เปลี่ยนเป็นสีเทาอ่อนเมื่อ hover */
+  }
